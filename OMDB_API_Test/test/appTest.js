@@ -22,7 +22,7 @@ describe('OMDB API Test ', function(){
             url: baseUrl+"/?apikey=abcdef&s=lord"
         }, function(err, res, body){
             expect(res.statusCode).to.equal(401);
-            expect(body={"Response":"False","Error":"Something went wrong."}).to.deep.equal({"Response":"False","Error":"Something went wrong."});
+            expect(body={"Response":"False","Error":"Invalid API key!"}).to.deep.equal({"Response":"False","Error":"Invalid API key!"});
             setTimeout(done,100);
             console.log(body);
             
@@ -35,7 +35,7 @@ describe('OMDB API Test ', function(){
             url: baseUrl+"/?apikey=f98bcc44&s="
         }, function(err, res, body){
             expect(res.statusCode).to.equal(200);
-            expect(body={"Response":"False","Error":"Invalid API key!"}).to.deep.equal({"Response":"False","Error":"Invalid API key!"});
+            expect(body={"Response":"False","Error":"Something went wrong."}).to.deep.equal({"Response":"False","Error":"Something went wrong."});
             setTimeout(done,100);
             console.log(body);
             
@@ -44,4 +44,5 @@ describe('OMDB API Test ', function(){
     });
     
 });
+
 
